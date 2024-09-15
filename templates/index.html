@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome to the VM Manager</h1>
+<p class="lead">This is a simple Flask application with user registration, login, and virtual machine management.</p>
+<p class="lead">This application was created by Martin Jeremias Künzler as part of his studies at the IFA and his practical work VCID.IA1A.PA. </p>
+<p class="lead">This practical work consists of the following subjects:</p>
+<ul class="lead">
+    <li>Databases and web development (DBWE)</li>
+    <li>IT architecture (ITAR)</li>
+    <li>Virtualization and Cloud Computing (VICC)</li>
+  </ul>
+  {% if current_user.is_authenticated %}
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Register new User</h5>
+          <p class="card-text">Create an new User for the VM Management Software</p>
+          <a href="{{ url_for('register') }}" class="btn btn-primary">New User</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Create new Virtual Maschine</h5>
+          <p class="card-text">Create new Virtual Maschine to use in the environment</p>
+          <a href="{{ url_for('new_vm') }}" class="btn btn-primary">New VM</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Register new User</h5>
+          <p class="card-text">Create an new User for the VM Management Software</p>
+          <a href="{{ url_for('register') }}" class="btn btn-primary">New User</a>
+        </div>
+      </div>
+    </div>
+{% endif %}
+{% endblock %}

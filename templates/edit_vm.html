@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Edit VM "{{ showVM.name }}"</h2>
+<form method="POST" action="{{ url_for('edit_vm', id=showVM.id) }}">
+    <div class="form-group">
+        <label for="name">ID:</label>
+        <input class="form-control" type="text" name="id" value="{{ showVM.id }}" disabled>
+    </div>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input class="form-control" type="text" name="name" value="{{ showVM.name }}" required>
+    </div>
+    <div class="form-group">
+        <label for="cpu">CPU Cores:</label>
+        <input class="form-control" type="text" name="cpu" value="{{ showVM.cpu }}">
+    </div>
+    <div class="form-group">
+    <label for="ram">Ram:</label>
+    <input class="form-control" type="text" name="ram" value="{{ showVM.ram }}">
+    </div>
+    <div class="form-group">
+        <label for="hdd">HDD Space:</label>
+        <input class="form-control" type="text" name="hdd" value="{{ showVM.hdd }}">
+    </div>
+    <div class="form-group">
+        <label for="ipv4">IP-Address:</label>
+        <input class="form-control" type="text" name="ipv4" value="{{ showVM.ipv4 }}">
+    </div>
+    <div class="form-group">
+        <label for="description">MAC-Adresse:</label>
+        <input class="form-control" type="text" name="mac" value="{{ showVM.mac }}">
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <input class="form-control" type="text" name="description" value="{{ showVM.description}}">
+    </div>
+    <button class="btn btn-primary" type="submit">Save Changes</button>
+    <button class="btn btn-secondary" type="reset">Cancle</button>
+</form>
+
+{% endblock %}
