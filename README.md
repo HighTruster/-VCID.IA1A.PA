@@ -1,80 +1,72 @@
 
-# VM-Management Application
+# VM-Management Anwendung
 
-This repository contains the source code and documentation for the **VM-Management** application. The project is part of a practical assignment and aims to provide users with an easy-to-use platform for managing virtual machines (VMs). Below are the main features, technologies used, and instructions for deploying the application.
+Dieses Repository enthält den Quellcode und die Dokumentation für die **VM-Management**-Anwendung. Das Projekt ist Teil einer Praxisarbeit und zielt darauf ab, den Benutzern eine benutzerfreundliche Plattform zur Verwaltung von virtuellen Maschinen (VMs) bereitzustellen. Im Folgenden werden die Hauptfunktionen, verwendete Technologien und Anweisungen zur Bereitstellung der Anwendung beschrieben.
 
-## Overview
+## Überblick
 
-The **VM-Management** application allows users to create, edit, and delete virtual machines, with resources like CPU, RAM, HDD, and network settings configurable via a user-friendly interface. The application is built using the Flask framework and MySQL as the database to store VM and user information.
+Die **VM-Management**-Anwendung ermöglicht es Benutzern, virtuelle Maschinen zu erstellen, zu bearbeiten und zu löschen. Dabei können Ressourcen wie CPU, RAM, Festplattenspeicher und Netzwerkeinstellungen über eine benutzerfreundliche Oberfläche konfiguriert werden. Die Anwendung wurde mit dem Flask-Framework entwickelt und verwendet MySQL als Datenbank zur Speicherung von VM- und Benutzerdaten.
 
-## Features
+## Funktionen
 
-- **VM Creation**: Users can create virtual machines by configuring settings such as CPU, RAM, storage, and network parameters.
-- **VM Editing**: Users can modify existing virtual machines and update their configurations.
-- **User Management**: The application supports user registration, login, and management of user accounts.
-- **API Integration**: A RESTful API allows external applications to interact with the system, including retrieving VM data in JSON format.
+- **VM-Erstellung**: Benutzer können virtuelle Maschinen erstellen, indem sie Einstellungen wie CPU, RAM, Speicher und Netzwerkeinstellungen konfigurieren.
+- **VM-Bearbeitung**: Benutzer können bestehende virtuelle Maschinen bearbeiten und deren Konfigurationen aktualisieren.
+- **Benutzerverwaltung**: Die Anwendung unterstützt die Registrierung, Anmeldung und Verwaltung von Benutzerkonten.
+- **API-Integration**: Eine RESTful API ermöglicht es externen Anwendungen, mit dem System zu interagieren, einschließlich des Abrufs von VM-Daten im JSON-Format.
 
-## Technologies Used
+## Verwendete Technologien
 
-- **Flask (Python)**: Web framework used to develop the application.
-- **MySQL**: Relational database used to store user and VM data.
-- **Docker**: Containerization platform used to deploy the application.
-- **NGINX**: Used as a reverse proxy to handle HTTP/HTTPS traffic and provide SSL support.
-- **SSL/TLS**: Ensures secure communication between users and the server.
+- **Flask (Python)**: Web-Framework zur Entwicklung der Anwendung.
+- **MySQL**: Relationale Datenbank zur Speicherung von Benutzer- und VM-Daten.
+- **Docker**: Containerisierungsplattform zur Bereitstellung der Anwendung.
+- **NGINX**: Wird als Reverse Proxy verwendet, um HTTP/HTTPS-Anfragen zu verarbeiten und SSL-Unterstützung zu bieten.
 
-## Deployment Instructions
+## Bereitstellungsanweisungen
 
-The application is packaged using Docker, allowing for easy deployment across different environments.
+Die Anwendung ist mit Docker verpackt und ermöglicht eine einfache Bereitstellung in verschiedenen Umgebungen.
 
-### Prerequisites
+### Voraussetzungen
 
-- **Docker** and **Docker Compose** installed.
-- **MySQL database** configured with the required credentials.
+- Docker und Docker Compose installiert.
+- MySQL-Datenbank mit den erforderlichen Anmeldeinformationen konfiguriert.
 
-### Steps to Deploy
+### Schritte zur Bereitstellung
 
-1. Clone this repository:
+1. Klonen Sie dieses Repository:
    ```bash
    git clone https://github.com/HighTruster/VCID.IA1A-MJK.git
    ```
 
-2. Navigate to the project directory:
+2. Wechseln Sie in das Projektverzeichnis:
    ```bash
    cd VCID.IA1A-MJK
    ```
 
-3. Update the environment variables and configuration files (`conf.env`).
-   export MAIL_USERNAME='your mail'
-   export MAIL_PASSWORD='your password'
-   export MAIL_DEFAULT_SENDER='your mail'
+3. Aktualisieren Sie die Umgebungsvariablen und Konfigurationsdateien (`conf.env`):
+   ```bash
+   export MAIL_USERNAME='Ihre Mail'
+   export MAIL_PASSWORD='Ihr Passwort'
+   export MAIL_DEFAULT_SENDER='Ihre Mail'
+   ```
 
-
-4. Build and start the Docker containers:
+4. Bauen und starten Sie die Docker-Container:
    ```bash
    docker compose up --build
    ```
 
-5. Access the application via your browser at `http://localhost` or your configured domain.
+5. Greifen Sie über Ihren Browser auf die Anwendung unter `http://localhost` oder Ihrer konfigurierten Domain zu.
 
-## API Endpoints
+## API-Endpunkte
 
-The following API endpoints are available for external integration:
+Die folgenden API-Endpunkte stehen für die externe Integration zur Verfügung:
 
-- **GET /api/vms**: Retrieve a list of all virtual machines.
-- **GET /api/users**: Retrieve a list of all registered users.
+- **GET /api/vms**: Gibt eine Liste aller virtuellen Maschinen zurück.
+- **GET /api/users**: Gibt eine Liste aller registrierten Benutzer zurück.
 
-## Future Enhancements
+## Lizenz
 
-Planned future features and improvements include:
+Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen finden Sie in der [LICENSE](LICENSE) Datei.
 
-- **Auto-scaling**: Integration of auto-scaling mechanisms to dynamically adjust resources based on load.
-- **CI/CD Integration**: Automating testing and deployment using CI/CD pipelines.
-- **Load Balancing**: Integration of load balancing for improved performance and availability.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
-## Author
+## Autor
 
 - Martin Jeremias Künzler
