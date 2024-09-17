@@ -3,8 +3,8 @@ services:
   flask-app:
     image: snickch/flask001:microblog-13
     container_name: flask-app
-    ports:
-      - "5000:5000"
+#    ports:
+#      - "5000:5000"
     volumes:
       - /root/flask/flask_app:/app
     working_dir: /app
