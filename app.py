@@ -120,15 +120,15 @@ import hashlib
 # =======================================================================================
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://kuenzler_DBWE:Ma:2fu:8Na:2z@149.126.4.37/kuenzler_DBWE'
-app.config['MAIL_SERVER'] = 'mail.cyon.ch'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://username:password@ip/databasename'
+app.config['MAIL_SERVER'] = 'mailserver'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = 'mail@martinkuenzler.ch'  # Deine Cyon E-Mail-Adresse
-app.config['MAIL_PASSWORD'] = 'gAhvyuCJY5QmG'  # Dein Cyon E-Mail-Passwort
-app.config['MAIL_DEFAULT_SENDER'] = 'mail@martinkuenzler.ch'  # Deine Absenderadresse
-app.config['MAIL_DEBUG'] = True  # Aktiviert das Debugging für Mail
+app.config['MAIL_USERNAME'] = 'your username'  # Deine E-Mail-Adresse
+app.config['MAIL_PASSWORD'] = 'your Mail Password'  # Dein E-Mail-Passwort
+app.config['MAIL_DEFAULT_SENDER'] = 'your default sender Mail'  # Deine Absenderadresse
+app.config['MAIL_DEBUG'] = False
 
 # Secret Key for session management
 # Enable SQLAlchemy echo for debugging
@@ -303,8 +303,8 @@ def sendmail():
     try:
         # Erstelle die Nachricht
         msg = Message('Hello from Flask', 
-                    sender='mail@martinkuenzler.ch',  # Absender explizit angeben
-                    recipients=['martin.j.kue@gmail.com'])  # Empfängeradresse einfügen
+                    sender='sender mail',  # Absender explizit angeben
+                    recipients=['recipiant'])  # Empfängeradresse einfügen
         msg.body = 'This is a test email sent from a Flask app!'
         mail.send(msg)  # E-Mail versenden
 
@@ -349,7 +349,7 @@ def load_user(user_id):
 # ======================================================================
 def send_welcome_email(user):
     msg = Message('Welcome to Our Service', 
-                  sender="mail@martinkuenzler.ch", 
+                  sender="sendermail", 
                   recipients=[user.email])
     msg.body = f'''Hi {user.username},
 
