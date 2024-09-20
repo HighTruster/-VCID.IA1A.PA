@@ -575,7 +575,7 @@ def get_vms():
 @app.route("/api/users", methods=['GET'])
 def get_users():
     users = User.query.all()
-    user_list = [{"id":user.id, "author": user.username} for user in users]
+    user_list = [{"id":user.id, "Username": user.username, "Firstname": user.firstname, "Lastname": user.lastname, "E-Mail": user.email, "Birthday": user.birthday} for user in users]
     return jsonify(user_list)
  
 
